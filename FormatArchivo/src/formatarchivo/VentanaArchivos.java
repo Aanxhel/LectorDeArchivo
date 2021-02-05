@@ -5,11 +5,14 @@
  */
 package formatarchivo;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.*;
 
 /**
  *
@@ -20,8 +23,17 @@ public class VentanaArchivos extends javax.swing.JFrame {
     /**
      * Creates new form VentanaArchivos
      */
+    File file;
+    String locaArchivo,
+                locaSalisa = "./Archivo/archivoSalida.txt";
+
+        
+    
     public VentanaArchivos() {
         initComponents();
+        
+        
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -36,6 +48,7 @@ public class VentanaArchivos extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         JFDirectorio = new javax.swing.JTextField();
+        ButtonChooser = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,6 +67,13 @@ public class VentanaArchivos extends javax.swing.JFrame {
             }
         });
 
+        ButtonChooser.setText("...");
+        ButtonChooser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonChooserActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -63,8 +83,11 @@ public class VentanaArchivos extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(jButton1)
-                    .addComponent(JFDirectorio, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(26, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(JFDirectorio, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(ButtonChooser)))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -72,10 +95,12 @@ public class VentanaArchivos extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(JFDirectorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(70, 70, 70)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JFDirectorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonChooser))
+                .addGap(43, 43, 43)
                 .addComponent(jButton1)
-                .addContainerGap(83, Short.MAX_VALUE))
+                .addContainerGap(207, Short.MAX_VALUE))
         );
 
         pack();
@@ -86,11 +111,9 @@ public class VentanaArchivos extends javax.swing.JFrame {
         
         Operadores archivo = new Operadores();
 
-        String locaArchivo,
-                locaSalisa = "./Archivo/archivoSalida.txt";
-
+        
         locaArchivo = JFDirectorio.getText();
-
+        
         archivo.analizarRuta(locaArchivo);
         try {
             archivo.lecturaArchivo(locaArchivo, locaSalisa);
@@ -110,6 +133,33 @@ public class VentanaArchivos extends javax.swing.JFrame {
     private void JFDirectorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JFDirectorioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JFDirectorioActionPerformed
+
+    private void ButtonChooserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonChooserActionPerformed
+        // TODO add your handling code here:
+        
+        JFileChooser jf = new JFileChooser();
+        
+        jf.setCurrentDirectory(new File("./Archivo"));
+        
+        //int response = jf.showOpenDialog(this);
+        int response = jf.showSaveDialog(this);
+        
+        if(response == JFileChooser.APPROVE_OPTION){
+             file = new File( jf.getSelectedFile().getAbsolutePath());
+            
+            JOptionPane.showMessageDialog(null,file);
+            
+            System.out.println(file);
+            
+        }
+        
+        
+        
+        
+       
+        
+        
+    }//GEN-LAST:event_ButtonChooserActionPerformed
 
     /**
      * @param args the command line arguments
@@ -147,6 +197,7 @@ public class VentanaArchivos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JButton ButtonChooser;
     public static javax.swing.JTextField JFDirectorio;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
