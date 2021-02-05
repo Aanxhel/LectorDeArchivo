@@ -1,1 +1,1 @@
-El fichero de texto ya estaba creado, dentro de read.
+El fichero de texto ya estaba creado, drentro de read.
