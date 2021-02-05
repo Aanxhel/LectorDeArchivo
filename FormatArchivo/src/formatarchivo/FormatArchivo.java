@@ -13,10 +13,7 @@ public class FormatArchivo {
         Operadores archivo = new Operadores();
         
         archivo.analizarRuta(locaArchivo);
-        
-        System.out.println(locaArchivo);
-        
-        
+        archivo.lecturaArchivo(locaArchivo);
         
     }
     
