@@ -16,8 +16,13 @@ public class Operadores {
         }//fin de IF/ELSE
     }//fin void analizarRuta
 
+    
+    
+    
+    
+    
     //clase que lee el archivo e imprime en consola
-    public void lecturaArchivo(String in, String out)throws IOException{
+    public void lecturaArchivo(String in, String out){
 
         try {
             FileReader r = new FileReader(in);                //carga del archivo texto
@@ -38,36 +43,32 @@ public class Operadores {
             System.out.println("sin archivo");
         }
         
+       
+        
+    }// fin void lecturaArchivo
+    
+    
+    
+    
+    public void residuo(String in, String out) throws IOException{
+        
+        
         
         File archivoSalida = new File(out);
         
         
         BufferedWriter buffer = new BufferedWriter(new FileWriter(archivoSalida));
         buffer.write("El fichero de texto ya estaba creado, drentro de read.");
-        
-        
         buffer.close(); 
         
-    }// fin void lecturaArchivo
+        
+    }
     
     
     /**************************************************
     el close() en necesario para cargar el archivo,
     de otro modo queda abierto
-    ***********************************************
-    public void escribirArchivo(String in, String out)throws IOException{
-        
-        File archivoEntrada = new File(in);
-        File archivoSalida = new File(out);
-        
-        BufferedWriter bw;                              //buffer para escribir
-        
-        bw = new BufferedReader(new BufferedReader(archivoEntrada));
-        bw = new BufferedWriter(new FileWriter(archivoSalida));
-        bw.write("El fichero de texto ya estaba creado.");
-        
-        bw.close();             
-    }//fin void escribirArchivo
-    */
+    ***********************************************/
+  
     
 }//fin class Operadores
