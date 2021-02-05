@@ -15,7 +15,7 @@ public class FormatArchivo {
 
         archivo.analizarRuta(locaArchivo);
         archivo.lecturaArchivo(locaArchivo);
-        archivo.escribirArchivo(locaSalisa);
+        archivo.escribirArchivo(locaArchivo,locaSalisa);
         
     }// static void main
 }//fin class FormatArchivo

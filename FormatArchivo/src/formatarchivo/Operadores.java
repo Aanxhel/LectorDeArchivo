@@ -39,15 +39,23 @@ public class Operadores {
         }
     }// fin void lecturaArchivo
     
-    public void escribirArchivo(String r)throws IOException{
+    
+    /**************************************************
+    el close() en necesario para cargar el archivo,
+    de otro modo queda abierto
+    ***********************************************/
+    public void escribirArchivo(String in, String out)throws IOException{
         
-        File archivo = new File(r);
+        File archivoEntrada = new File(in);
+        File archivoSalida = new File(out);
         
         BufferedWriter bw;                              //buffer para escribir
         
-        bw = new BufferedWriter(new FileWriter(archivo));
+        bw = new BufferedReader(new BufferedReader(archivoEntrada));
+        bw = new BufferedWriter(new FileWriter(archivoSalida));
         bw.write("El fichero de texto ya estaba creado.");
         
-        bw.close();
-    }
+        bw.close();             
+    }//fin void escribirArchivo
+    
 }//fin class Operadores
