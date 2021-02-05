@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class Operadores {
 
@@ -11,7 +12,7 @@ public class Operadores {
     public void analizarRuta(String r) {              //cara de ruta de archivo
         File archivoSinFormato = new File(r);           // File compruba que exista el archivo
         if (archivoSinFormato.exists()) {             //verificar si existe archivo
-            System.out.println("la ruta existe");
+            System.out.println("Success");
         } else {                                      // en caso de no exitir mensa de salida
             System.out.println("no existe y hay que crearlo");
         }//fin de IF/ELSE
@@ -49,13 +50,14 @@ public class Operadores {
                 //System.out.println(temp);
                 bufferSalida.write(temp.replace("\"", ""));
                 
-
             }//fin while
 
             bufferSalida.close();
+            JOptionPane.showMessageDialog(null,"Archivo Modificado con Exito!!");
 
         } catch (Exception ex) {
             System.out.println("sin archivo");
+            JOptionPane.showMessageDialog(null,"Error de archivo");
         }//fin try/catch 
 
     }// fin void lecturaArchivo
