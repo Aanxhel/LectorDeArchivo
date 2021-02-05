@@ -48,7 +48,7 @@ public class Operadores {
 
                 //lectura e imprecion de txt sin modificar
                 //System.out.println(temp);
-                bufferSalida.write(temp.replace("\"", ""));
+                bufferSalida.write(temp.replace("\" \"", ""));
                 
             }//fin while
 
