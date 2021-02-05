@@ -14,8 +14,8 @@ public class FormatArchivo {
         Operadores archivo = new Operadores();
 
         archivo.analizarRuta(locaArchivo);
-        archivo.lecturaArchivo(locaArchivo);
-        archivo.escribirArchivo(locaArchivo,locaSalisa);
+        archivo.lecturaArchivo(locaArchivo,locaSalisa);
+        //archivo.escribirArchivo(locaArchivo,locaSalisa);
         
     }// static void main
 }//fin class FormatArchivo
