@@ -48,5 +48,6 @@ public class Operadores {
         bw = new BufferedWriter(new FileWriter(archivo));
         bw.write("El fichero de texto ya estaba creado.");
         
+        bw.close();
     }
 }//fin class Operadores

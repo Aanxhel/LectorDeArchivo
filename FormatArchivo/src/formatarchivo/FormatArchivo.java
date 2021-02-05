@@ -18,5 +18,4 @@ public class FormatArchivo {
         archivo.escribirArchivo(locaSalisa);
         
     }// static void main
-    
 }//fin class FormatArchivo
