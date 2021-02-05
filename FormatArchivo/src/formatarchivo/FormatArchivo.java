@@ -16,5 +16,8 @@ public class FormatArchivo {
         archivo.analizarRuta(locaArchivo);
         archivo.lecturaArchivo(locaArchivo,locaSalisa);
         
+        
+        System.out.println("fin del programa");
+        
     }// static void main
 }//fin class FormatArchivo

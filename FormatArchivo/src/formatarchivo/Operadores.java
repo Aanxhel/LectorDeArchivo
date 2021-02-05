@@ -43,10 +43,6 @@ public class Operadores {
             while (temp != null) {                // buscador de archivo todas las lineas
                 temp = buffer.readLine();
 
-                
-                if(temp == "\""){
-                    temp = " ";
-                }
                 if (temp == null) {
                     break;
 
@@ -56,7 +52,8 @@ public class Operadores {
                 //lectura e imprecion de txt sin modificar
                 //System.out.println(temp);
                 
-                bufferSalida.write(temp);
+                bufferSalida.write( temp.replace("\"", "") );
+                bufferSalida.write( temp.replace("!##!", "!##!\n") );
 
             }//fin while
             
@@ -79,4 +76,5 @@ public class Operadores {
 
     }// fin void lecturaArchivo
 
+    
 }//fin class Operadores
