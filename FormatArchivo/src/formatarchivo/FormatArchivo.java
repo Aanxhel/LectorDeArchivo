@@ -3,6 +3,7 @@ package formatarchivo;
 
 import java.io.IOException;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class FormatArchivo {
 
@@ -11,9 +12,11 @@ public class FormatArchivo {
         String locaArchivo;// = "./Archivo/archivo.txt";
         String locaSalisa = "./Archivo/archivoSalida.txt";
         
-        System.out.print("ingrese ruta de archivo:");
+        System.out.print("Estatus de archivo:");
         Scanner sc = new Scanner(System.in);
-        locaArchivo = sc.nextLine();
+        locaArchivo = JOptionPane.showInputDialog("Introduzca direccion de archivo: ");
+        
+        //locaArchivo = sc.nextLine();
         
         
         Operadores archivo = new Operadores();
