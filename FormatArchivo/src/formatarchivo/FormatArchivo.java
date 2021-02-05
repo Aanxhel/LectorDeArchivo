@@ -6,12 +6,16 @@ import java.util.Scanner;
 public class FormatArchivo {
 
     public static void main(String[] args) {
-        Scanner ingresaArchivo = new Scanner(System.in);
+        
+        String locaArchivo = "./Archivo/asino.txt";
+        
         
         Operadores archivo = new Operadores();
         
-        System.out.println("Ingrese ruta de archivo:");
-        archivo.analizarRuta(ingresaArchivo.nextLine());
+        archivo.analizarRuta(locaArchivo);
+        
+        System.out.println(locaArchivo);
+        
         
         
     }
