@@ -10,7 +10,8 @@ public class FormatArchivo {
     public static void main(String[] args) throws IOException {
         
         String locaArchivo;// = "./Archivo/archivo.txt";
-        String locaSalisa = "./Archivo/archivoSalida.txt";
+        String locaSalisa = "./Archivo/arcSal.txt";
+        String locaSalisa2 = "./Archivo/arcSal2.txt";
         
         System.out.print("Estatus de archivo:");
         Scanner sc = new Scanner(System.in);
@@ -22,7 +23,8 @@ public class FormatArchivo {
         Operadores archivo = new Operadores();
 
         archivo.analizarRuta(locaArchivo);
-        archivo.lecturaArchivo(locaArchivo,locaSalisa);
+        archivo.lecturaArchivoConca(locaArchivo,locaSalisa);
+        archivo.lecturaArchivoComi(locaSalisa,locaSalisa2);
         
         
         System.out.println("fin del programa");
