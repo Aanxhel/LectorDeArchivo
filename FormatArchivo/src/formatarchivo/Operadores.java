@@ -40,8 +40,6 @@ public class Operadores {
             "Grand Total"
         };
 
-        String maxCatas;
-
         BufferedReader buffer;
 
         try {
@@ -69,14 +67,23 @@ public class Operadores {
                 for (String colu : catas) {
 
                     if (temp.contains(colu)) {
+                        
+                        //temp.replace("|Terminado|", "|" + colu + "-Terminado|");
+                        //temp.replace("\" \"", "");
+                        
+                        
                         bufferSalida.write(temp.replace("|Terminado|", "|" + colu + "-Terminado|"));
+                        bufferSalida.write(temp.replace("\" \"", ""));
+                        
                     }
 
                 }//fin for each loop
-                temp.replace("\" \"", "");
+                
+                
+                //temp.replace("\" \"", "");
                 //lectura e imprecion de txt sin modificar
                 //System.out.println(temp);
-//                bufferSalida.write(temp.replace("\" \"", ""));
+                //bufferSalida.write(temp.replace("\" \"", ""));
 
             }//fin while
 
