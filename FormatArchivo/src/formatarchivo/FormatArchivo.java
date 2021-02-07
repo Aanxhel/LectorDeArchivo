@@ -28,7 +28,7 @@ public class FormatArchivo {
         archivo.ConcatPath(locaArchivo,locaSalisa);
         archivo.comiFormat(locaSalisa,locaSalisa2);
         archivo.dateFormat(locaSalisa2,salida);
-        //archivo.MesArchivo(locaSalisa3,salida);
+
         
         
         System.out.println("fin del programa");
