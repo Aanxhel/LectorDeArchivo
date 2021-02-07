@@ -12,7 +12,8 @@ public class FormatArchivo {
         String locaArchivo;// = "./Archivo/archivo.txt";
         String locaSalisa = "./Archivo/temp/arcSal1.txt";
         String locaSalisa2 = "./Archivo/temp/arcSal2.txt";
-        String locaSalisa3 = "./Archivo/archivo.txt";
+        String locaSalisa3 = "./Archivo/temp/arcSal3.txt";
+        String salida = "./Archivo/archivo.txt";
         
         System.out.print("Estatus de archivo:");
         Scanner sc = new Scanner(System.in);
@@ -25,8 +26,9 @@ public class FormatArchivo {
 
         archivo.analizarRuta(locaArchivo);
         archivo.ConcatPath(locaArchivo,locaSalisa);
-        archivo.comiiFormat(locaSalisa,locaSalisa2);
-        archivo.dateFormat(locaSalisa2,locaSalisa3);
+        archivo.comiFormat(locaSalisa,locaSalisa2);
+        archivo.dateFormat(locaSalisa2,salida);
+        //archivo.MesArchivo(locaSalisa3,salida);
         
         
         System.out.println("fin del programa");

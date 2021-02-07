@@ -5,7 +5,11 @@ import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
+import java.util.*;
+
 
 public class Operadores {
 
@@ -54,24 +58,27 @@ public class Operadores {
                 if (temp == null) {
                     break;
                 }
+
+
                 // for each loop 
                 for (String colu : catas) {
                     if (temp.contains(colu)) {
-                        //temp.replace("|Terminado|", "|" + colu + "-Terminado|");
-                        //temp.replace("\" \"", "");
                         bufferSalida.write(temp.replace("|Terminado|", "|" + colu + "-Terminado|"));
                     }
                 }//fin for each loop
             }//fin while
+
+
+
             bufferSalida.close();
-            JOptionPane.showMessageDialog(null, "Concatena Terminado");
+
         } catch (Exception ex) {
             System.out.println("sin archivo");
             JOptionPane.showMessageDialog(null, "Error de archivo");
         }//fin try/catch 
     }// fin void lecturaArchivoConcatena
 
-    public void comiiFormat(String in, String out) throws IOException {
+    public void comiFormat(String in, String out) throws IOException {
         BufferedReader buffer;
         try {
             FileReader r = new FileReader(in);                //carga del archivo texto
@@ -83,31 +90,32 @@ public class Operadores {
             BufferedWriter bufferSalida = new BufferedWriter(new FileWriter(arcSal));
             while (temp != null) {                // buscador de archivo todas las lineas
                 temp = buffer.readLine();
-                
+
                 if (temp == null) {
                     break;
                 }
                 bufferSalida.write(temp.replace("\" \"", ""));
-                
+
                 bufferSalida.write("\n");           // salto de linea para no ensimar el archivo
             }//fin while
             bufferSalida.close();
-            JOptionPane.showMessageDialog(null, "Elimina comillas");
+
         } catch (Exception ex) {
             System.out.println("sin archivo");
             JOptionPane.showMessageDialog(null, "Error de archivo");
         }//fin try/catch 
     }// fin void lecturaArchivoComi
-    
+
     /*
     *creacion de formato de fecha
-    */
+     */
+    
+    
+    
+    
     public void dateFormat(String in, String out) throws IOException {
         BufferedReader buffer;
-        
-        SimpleDateFormat formatter = new SimpleDateFormat("MM-dd-yyyy - HH:mm:ss");
-        
-        
+
         try {
             FileReader r = new FileReader(in);                //carga del archivo texto
             buffer = new BufferedReader(r);
@@ -118,30 +126,91 @@ public class Operadores {
             BufferedWriter bufferSalida = new BufferedWriter(new FileWriter(arcSal));
             while (temp != null) {                // buscador de archivo todas las lineas
                 temp = buffer.readLine();
-                
                 if (temp == null) {
                     break;
                 }
+
                 
                 
                 
-                
-                
-                
-                bufferSalida.write(temp.replace("\" \"", ""));
-                
+                //|24/09/2012 11:00 AM|
+                //fechaFormat.format(fecha);
+                //bufferSalida.write(temp.replaceAll("[|][dd][/][mm][/][yyyy] [hh][:]][mm] [|]", fechaFormat.format(fecha)));
+                bufferSalida.write( temp.replace( "/" , "-" ) );
+
                 
                 
                 
                 bufferSalida.write("\n");           // salto de linea para no ensimar el archivo
             }//fin while
+
             bufferSalida.close();
-            JOptionPane.showMessageDialog(null, "Formato de Fecha");
+
+            JOptionPane.showMessageDialog(null, "Archivo creado");
+
         } catch (Exception ex) {
             System.out.println("sin archivo");
-            JOptionPane.showMessageDialog(null, "Error de archivo");
+            JOptionPane.showMessageDialog(null, "sin archivo");
         }//fin try/catch 
-    }// fin void lecturaArchivoComi
-    
-    
+    }// fin void dateFormat
+
+
+
+    public void MesArchivo(String in, String out) throws IOException {
+
+        String[] catas ={
+                "-01-",
+                "-02-"
+
+        };
+
+        BufferedReader buffer;
+
+
+
+        try {
+            FileReader r = new FileReader(in);                //carga del archivo texto
+            buffer = new BufferedReader(r);
+            //System.out.println(buffer.readLine());// me imprime linea por linea
+            //lectura del archivo de texto e imprecion en consola
+            String temp = "";
+            File arcSal = new File(out);
+            BufferedWriter bufferSalida = new BufferedWriter(new FileWriter(arcSal));
+            while (temp != null) {                // buscador de archivo todas las lineas
+                temp = buffer.readLine();
+                if (temp == null) {
+                    break;
+                }
+
+
+
+
+                // for each loop
+
+                for (String colu : catas) {
+                    if (temp.contains("-01-")) {
+                        bufferSalida.write(temp.replace("-01-", "-Jan"));
+                    }
+                }//fin for each loop
+
+
+
+
+                bufferSalida.write("\n");           // salto de linea para no ensimar el archivo
+            }//fin while
+
+            bufferSalida.close();
+
+            JOptionPane.showMessageDialog(null, "Archivo creado");
+
+        } catch (Exception ex) {
+            System.out.println("sin archivo");
+            JOptionPane.showMessageDialog(null, "sin archivo");
+
+        }//fin try/catch
+    }// fin void MesArchivo
+
+
+
+
 }//fin class Operadores
