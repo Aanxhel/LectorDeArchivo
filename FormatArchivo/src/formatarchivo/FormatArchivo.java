@@ -27,9 +27,10 @@ public class FormatArchivo {
         archivo.analizarRuta(locaArchivo);
         archivo.ConcatPath(locaArchivo,locaSalisa);
         archivo.comiFormat(locaSalisa,locaSalisa2);
-        archivo.dateFormat(locaSalisa2,salida);
-
+        archivo.dateFormat(locaSalisa2,locaSalisa3);
+        archivo.dateVocal(locaSalisa3,salida);
         
+
         
         System.out.println("fin del programa");
         
