@@ -1,0 +1,7 @@
+D:\Github\LectorArchivo\Refactor\LectorDeArchivo\FortArchCS\ArchivoFormatoCS\ArchivoFormatoCS\obj\Debug\ArchivoFormatoCS.csprojAssemblyReference.cache
+D:\Github\LectorArchivo\Refactor\LectorDeArchivo\FortArchCS\ArchivoFormatoCS\ArchivoFormatoCS\obj\Debug\ArchivoFormatoCS.csproj.CoreCompileInputs.cache
+D:\Github\LectorArchivo\Refactor\LectorDeArchivo\FortArchCS\ArchivoFormatoCS\ArchivoFormatoCS\bin\Debug\ArchivoFormatoCS.exe.config
+D:\Github\LectorArchivo\Refactor\LectorDeArchivo\FortArchCS\ArchivoFormatoCS\ArchivoFormatoCS\bin\Debug\ArchivoFormatoCS.exe
+D:\Github\LectorArchivo\Refactor\LectorDeArchivo\FortArchCS\ArchivoFormatoCS\ArchivoFormatoCS\bin\Debug\ArchivoFormatoCS.pdb
+D:\Github\LectorArchivo\Refactor\LectorDeArchivo\FortArchCS\ArchivoFormatoCS\ArchivoFormatoCS\obj\Debug\ArchivoFormatoCS.exe
+D:\Github\LectorArchivo\Refactor\LectorDeArchivo\FortArchCS\ArchivoFormatoCS\ArchivoFormatoCS\obj\Debug\ArchivoFormatoCS.pdb

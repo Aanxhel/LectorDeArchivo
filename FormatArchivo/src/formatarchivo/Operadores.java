@@ -129,9 +129,6 @@ public class Operadores {
                     break;
                 }
 
-                //|24/09/2012 11:00 AM|
-                //fechaFormat.format(fecha);
-                //bufferSalida.write(temp.replaceAll("[|][dd][/][mm][/][yyyy] [hh][:]][mm] [|]", fechaFormat.format(fecha)));
                 bufferSalida.write(temp.replace("/", "-"));
 
                 bufferSalida.write("\n");           // salto de linea para no ensimar el archivo
@@ -145,7 +142,7 @@ public class Operadores {
         }//fin try/catch 
     }// fin void dateFormat
 
-    //reemplaza el acento de seccion ó
+    //reemplaza el acento de seccion [ó]
     public void dateVocal(String in, String out) throws IOException {
         BufferedReader buffer;
 
@@ -170,8 +167,7 @@ public class Operadores {
 
             bufferSalida.close();
 
-            JOptionPane.showMessageDialog(null, "Archivo creado");
-
+            //  JOptionPane.showMessageDialog(null, "Archivo creado");
         } catch (Exception ex) {
             System.out.println("sin archivo");
             JOptionPane.showMessageDialog(null, "sin archivo");
