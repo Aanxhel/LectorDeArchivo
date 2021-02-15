@@ -12,27 +12,37 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import javax.swing.JOptionPane;
-import java.util.Date;
+import java.util.*;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.regex.*;
 
 public class chancheDate {
 
     //|26-10-2012 10:55 AM|
     // date format 1
     private static final DateTimeFormatter dateFormatter
-            = DateTimeFormatter.ofPattern("|dd-MM-yyyy HH:mm:ss a|");
+            = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm a");
 
+
+    /*
+    Exprecion regular FECHA:
+    \|\d\d.\d\d.\d\d\d\d.\d\d.\d\d\s\w\w\|
+     */
     // date format 2
     //|NOV-20-2020 13:00:00|
     /*
     private static final DateTimeFormatter dateFormatterNew 
         = DateTimeFormatter.ofPattern("EEEE, MMM d, yyyy HH:mm:ss a");*/
     private static final DateTimeFormatter dateFormatterNew
-            = DateTimeFormatter.ofPattern("|MMM-dd-yyyy |");
+            = DateTimeFormatter.ofPattern("MMM-dd-yyyy ");
 
+    Pattern patDateFormart = Pattern.compile(" \\|\\d\\d.\\d\\d.\\d\\d\\d\\d.\\d\\d.\\d\\d\\s\\w\\w\\|");
 //reemplaza las cambioFecha
+
     public void cambioFecha(String in, String out) throws IOException {
         BufferedReader buffer;
 
@@ -53,10 +63,6 @@ public class chancheDate {
                 //bufferSalida.write(temp.replace("\" \"", ""));
 
                
-
-
-
-                bufferSalida.write(temp.replace("", "hola"));
 
                 bufferSalida.write("\n");           // salto de linea para no ensimar el archivo
             }//fin while
