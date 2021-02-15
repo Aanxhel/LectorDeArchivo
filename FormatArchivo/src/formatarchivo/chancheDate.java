@@ -62,7 +62,13 @@ public class chancheDate {
                 }
                 //bufferSalida.write(temp.replace("\" \"", ""));
 
-               
+                Pattern patDateFormart = Pattern.compile(".*\\|\\d\\d.\\d\\d.\\d\\d\\d\\d.\\d\\d.\\d\\d\\s\\w\\w\\|.*");
+                Matcher matDateFormart = patDateFormart.matcher(temp);
+                if (matDateFormart.find()) {
+                    System.out.println("SI");
+                } else {
+                    System.out.println("NO");
+                }
 
                 bufferSalida.write("\n");           // salto de linea para no ensimar el archivo
             }//fin while
