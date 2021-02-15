@@ -14,11 +14,14 @@ class caracter {
 
         Pattern patDateFormart = Pattern.compile("\\|\\d\\d.\\d\\d.\\d\\d\\d\\d.\\d\\d.\\d\\d\\s\\w\\w\\|");
         Matcher matDateFormart = patDateFormart.matcher(cadena);
-        
+
         if (matDateFormart.find()) {
+
             String matDateFormartp2 = matDateFormart.replaceAll("|Test|");
             System.out.println(matDateFormartp2);
+
         }
+
     }//fin de busqueda
 
 }// fin class
