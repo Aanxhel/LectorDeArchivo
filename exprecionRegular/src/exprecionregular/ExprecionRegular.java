@@ -5,7 +5,13 @@ public class ExprecionRegular {
 
     public static void main(String[] args) {
         caracter car = new caracter();
+        
+       
         car.busqueda();
+        
+        calendar cal = new calendar();
+        cal.demo();
+       
     }
     
 }

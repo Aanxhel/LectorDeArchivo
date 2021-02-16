@@ -4,7 +4,13 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+
 class caracter {
+
+
 
     public void busqueda() {
 
@@ -12,15 +18,16 @@ class caracter {
 
         String cadena = "abcd|26-10-2012 10:55 AM|efgh";
 
-        Pattern patDateFormart = Pattern.compile("\\|\\d\\d.\\d\\d.\\d\\d\\d\\d.\\d\\d.\\d\\d\\s\\w\\w\\|");
+        Pattern patDateFormart = Pattern.compile("\\|\\d\\d.\\d\\d.\\d\\d\\d\\d.");
+
         Matcher matDateFormart = patDateFormart.matcher(cadena);
 
         if (matDateFormart.find()) {
+            System.out.println(matDateFormart.replaceFirst(cadena));
+        }//fin if
 
-            String matDateFormartp2 = matDateFormart.replaceAll("|Test|");
-            System.out.println(matDateFormartp2);
 
-        }
+      
 
     }//fin de busqueda
 
