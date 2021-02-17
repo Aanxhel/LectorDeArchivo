@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace ConsoleApp1
 {
@@ -10,21 +11,13 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.Write("Ingrese ruta de archivo:");
-            String archivo;
-            archivo = Console.ReadLine(); 
-
-            
-
-            ReadItem readItem = new ReadItem();
-
-            readItem.checkList(archivo);
+            Console.Write("Estatus:");
+            TextReader archivoReader = new StreamReader("./../../Archivo/tmp/esteNo.txt");
 
 
+            ReadItem item = new ReadItem();
 
-
-
-
+            item.checkList(archivoReader);
 
 
             Console.WriteLine("Presione cualquier tecla para salir....");
