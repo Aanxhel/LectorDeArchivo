@@ -19,7 +19,6 @@ public class FormatArchivo {
         System.out.print("Estatus de archivo:");
         
         //locaArchivo = JOptionPane.showInputDialog("Introduzca direccion de archivo: ");
-       
         Operadores archivo = new Operadores();
         chancheDate chanche = new chancheDate();
 
@@ -30,10 +29,7 @@ public class FormatArchivo {
         archivo.dateVocal(locaSalisa3,locaSalisa4);
         chanche.cambioFecha(locaSalisa4, salida);
         
-        
-
-        
-        System.out.println("fin del programa");
+        System.out.println("fin del programa");//marca fin del programa
         
     }// static void main
 }//fin class FormatArchivo

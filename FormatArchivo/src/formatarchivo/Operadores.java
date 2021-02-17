@@ -11,7 +11,6 @@ import javax.swing.JOptionPane;
 import java.util.*;
 
 public class Operadores {
-
     //analizador de existencia de archivo
     public void analizarRuta(String r) {              //cara de ruta de archivo
         File archivoSinFormato = new File(r);           // File compruba que exista el archivo
@@ -22,7 +21,6 @@ public class Operadores {
         }//fin de IF/ELSE
     }//fin void analizarRuta
     //clase que lee el archivo e imprime en consola
-
 //concatena los archivos
     public void ConcatPath(String in, String out) throws IOException {
         String[] catas = {
@@ -89,7 +87,6 @@ public class Operadores {
                     break;
                 }
                 bufferSalida.write(temp.replace("\" \"", ""));
-
                 bufferSalida.write("\n");           // salto de linea para no ensimar el archivo
             }//fin while
             bufferSalida.close();
@@ -99,14 +96,12 @@ public class Operadores {
             JOptionPane.showMessageDialog(null, "Error de archivo");
         }//fin try/catch 
     }// fin void lecturaArchivoComi
-
     /*
     *creacion de formato de fecha
      */
     //da estilo a la fecha
     public void dateFormat(String in, String out) throws IOException {
         BufferedReader buffer;
-
         try {
             FileReader r = new FileReader(in);                //carga del archivo texto
             buffer = new BufferedReader(r);
@@ -120,24 +115,18 @@ public class Operadores {
                 if (temp == null) {
                     break;
                 }
-
                 bufferSalida.write(temp.replace("/", "-"));
-
                 bufferSalida.write("\n");           // salto de linea para no ensimar el archivo
             }//fin while
-
             bufferSalida.close();
-
         } catch (Exception ex) {
             System.out.println("sin archivo");
             JOptionPane.showMessageDialog(null, "sin archivo");
         }//fin try/catch 
     }// fin void dateFormat
-
     //reemplaza el acento de seccion [ó]
     public void dateVocal(String in, String out) throws IOException {
         BufferedReader buffer;
-
         try {
             FileReader r = new FileReader(in);                //carga del archivo texto
             buffer = new BufferedReader(r);
@@ -151,14 +140,10 @@ public class Operadores {
                 if (temp == null) {
                     break;
                 }
-
                 bufferSalida.write(temp.replace("|SesiC3n", "|Sesión"));
-
                 bufferSalida.write("\n");           // salto de linea para no ensimar el archivo
             }//fin while
-
             bufferSalida.close();
-
             //  JOptionPane.showMessageDialog(null, "Archivo creado");
         } catch (Exception ex) {
             System.out.println("sin archivo");
