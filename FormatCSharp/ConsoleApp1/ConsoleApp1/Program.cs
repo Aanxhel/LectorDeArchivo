@@ -12,12 +12,13 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             Console.Write("Estatus:");
-            TextReader archivoReader = new StreamReader("./../../Archivo/tmp/esteNo.txt");
+            TextReader archivoReader = new StreamReader("./../../../Archivo/tmp/esteNo.txt");
+            TextWriter archivoWriter = new StreamWriter("./../../../Archivo/tmp/archivo.txt");
 
 
             ReadItem item = new ReadItem();
 
-            item.checkList(archivoReader);
+            item.checkList(archivoReader, archivoWriter);
 
 
             Console.WriteLine("Presione cualquier tecla para salir....");
