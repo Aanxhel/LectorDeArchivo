@@ -58,7 +58,7 @@ public class Operadores {
             while (temp != null) {                // buscador de archivo todas las lineas
 
                 temp = buffer.readLine();
-                bufferSalida.write("\n");           // salto de linea para no ensimar el archivo
+                           // salto de linea para no ensimar el archivo
                 if (temp == null) {
                     break;
                 }
@@ -69,6 +69,7 @@ public class Operadores {
                         bufferSalida.write(temp.replace("|Terminado|", "|" + colu + "-Terminado|"));
                     }
                 }//fin for each loop
+                bufferSalida.write("\n");
             }//fin while
 
             bufferSalida.close();

@@ -49,7 +49,7 @@ public class chancheDate {
 
                 if (matDateFormart.find()) {
 
-                    bufferSalida.write(matDateFormart.replaceFirst("|NOV-12-2020 13:00:00|"));
+                    bufferSalida.write(matDateFormart.replaceFirst("|ENE-13-2021 13:00:00|"));
 
                 }
 
