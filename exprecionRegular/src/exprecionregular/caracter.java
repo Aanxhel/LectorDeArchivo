@@ -10,11 +10,6 @@ import java.time.format.DateTimeFormatter;
 
 class caracter {
 
-
-    
-    
-    
-
     public void busqueda() {
 
         System.out.println("programa iniciado");
@@ -29,9 +24,6 @@ class caracter {
             System.out.println(matDateFormart.replaceFirst(cadena));
         }//fin if
 
-
-      
-
-    }//fin de busquedas
+    }//fin de busqueda
 
 }// fin class
