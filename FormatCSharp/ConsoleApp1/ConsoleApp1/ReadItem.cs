@@ -6,8 +6,8 @@ namespace ConsoleApp1
     {
         internal void check(string item)
         {
-            Console.WriteLine(item);
-            Console.ReadKey();
+            System.Console.WriteLine("La ruta es {0}",item);
+            
         }
     }
 }
