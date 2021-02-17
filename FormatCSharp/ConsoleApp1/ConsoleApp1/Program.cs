@@ -11,15 +11,14 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             Console.Write("Ingrese ruta de archivo:");
+            String archivo;
+            archivo = Console.ReadLine(); 
+
             
 
-            String archivo = System.IO.File.ReadAllText(@"C:\Users\Angel Montiel\Desktop\esteNo.txt");
+            ReadItem readItem = new ReadItem();
 
-            
-
-            ReadItem read = new ReadItem();
-
-            read.check(archivo);
+            readItem.checkList(archivo);
 
 
 
