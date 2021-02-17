@@ -11,6 +11,9 @@ import java.time.format.DateTimeFormatter;
 class caracter {
 
 
+    
+    
+    
 
     public void busqueda() {
 
@@ -29,6 +32,6 @@ class caracter {
 
       
 
-    }//fin de busqueda
+    }//fin de busquedas
 
 }// fin class
